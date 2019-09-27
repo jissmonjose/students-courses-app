@@ -1,0 +1,51 @@
+registration
+---------------
+create a separate app for the purpose
+
+
+views.py
+-----------
+create a register view
+next create register form that passes to this view.
+for that v import a UserCreationFrom class.
+
+
+and use it in register view.
+
+
+next create template,
+
+
+create a form in it.
+
+add csrf_token to provide security against forgeries.
+
+add key of form value created in views file. in {{form.as_p}}
+
+as_p -- render our form in paragraphs.
+
+
+when v input some data and submit the form.
+since v dont specify where to post those data, so it posted back to the  register route
+
+any request comes to the register route. 
+v create a form and render the form insside a template
+
+if v do a post request, v validate the form data.
+
+messages
+----------------
+alert-{{messages.tags}} - same as alert-success
+
+
+
+
+
+
+
+
+
+
+
+
+
