@@ -33,9 +33,36 @@ v create a form and render the form insside a template
 
 if v do a post request, v validate the form data.
 
-messages
-----------------
-alert-{{messages.tags}} - same as alert-success
+setting flash messages
+----------------------
+
+<div class="row">
+    <div class="col-md-8">
+        {% if messages %}
+            {% for msg in messages %}
+            <!-- here v create an alert and grab the message tag for success -->
+            <div class="alert alert-{{msg.tags}}">
+                <!-- specify the message  -->
+                {{msg}}
+            {% endfor %}
+        {% endif %}
+            </div>
+</div>
+
+
+in views.py
+-------------
+
+{{msg.tags}} -- points to below message tag
+messages.success(request, f'Account Created for {username}')
+
+
+
+
+
+
+
+
 
 
 
