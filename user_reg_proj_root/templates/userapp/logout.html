@@ -1,0 +1,11 @@
+{% extends 'userapp/base.html' %}
+
+{% block content %}
+    <h1>You Have been Logged Out</h1>
+    <div class="pt-2">
+        <small class="text-muted">
+            <a href="{% url 'login' %}" class="ml-3">Login Again</a>
+        </small>
+    </div>
+{% endblock %}
+
