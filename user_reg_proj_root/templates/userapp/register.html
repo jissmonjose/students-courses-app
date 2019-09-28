@@ -3,17 +3,22 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
+<section id="register" class="py-5">
 <div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+    <div class="card">
+    <div class="card-body">
     <form method="POST">
         {% csrf_token %}
-        <fieldset class="form-group">
+        <div class="form-group">
             <!-- create a legeng -->
-            <legend class="border-bottom mb-4">
-
-                Join Today
-            </legend>
+            <h1 class="display-6 border-bottom">
+                Register
+            </h1>
             {{form|crispy}}
-        </fieldset>
+        </div>
         <!-- create a button -->
         <div class="form-group">
             <button type="submit" class="btn btn-outline-info">Sign Up</button>
@@ -26,6 +31,10 @@
         </small>
     </div>
 </div>
-
+    </div>
+</div>
+    </div>
+    </div>
+    </section>
 {% endblock %}
 

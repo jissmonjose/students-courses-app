@@ -4,6 +4,10 @@
 
 {% block content %}
 <div class="container">
+    <div class="row">
+        <div class="col-md-3 mx-auto">
+               <div class="card mt-3">
+    <div class="card-body">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -26,6 +30,9 @@
         </small>
     </div>
 </div>
-
+</div>
+    </div>
+    </div>
+</div>
 {% endblock %}
 

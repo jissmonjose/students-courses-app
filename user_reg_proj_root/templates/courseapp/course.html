@@ -1,0 +1,36 @@
+{% extends 'courseapp/base.html'%}
+
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<div class="container">
+
+        <div class="row">
+        <div class="col-md-4 mx-auto">
+               <div class="card mt-3 mb-4">
+    <div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <!-- create a legend -->
+            <legend class="border-bottom mb-4">
+
+                Create Courses
+            </legend>
+            {{form|crispy}}
+        </fieldset>
+        <!-- create a button -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-info">Create</button>
+        </div>
+    </form>
+
+    </div>
+               </div>
+        </div>
+
+</div>
+</div>
+
+{% endblock%}
