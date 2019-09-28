@@ -1,5 +1,6 @@
 {% extends 'userapp/base.html' %}
-
+<!--load crispy form-->
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
@@ -11,7 +12,7 @@
 
                 Join Today
             </legend>
-            {{form1.as_p}}
+            {{form1|crispy}}
         </fieldset>
         <!-- create a button -->
         <div class="form-group">

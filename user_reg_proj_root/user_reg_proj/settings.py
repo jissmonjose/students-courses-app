@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'userapp.apps.UserappConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,3 +117,8 @@ STATIC_URL = '/static/'
 
 # messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+# crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+

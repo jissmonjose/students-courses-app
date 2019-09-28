@@ -62,12 +62,86 @@ messages.success(request, f'Account Created for {username}')
 
 
 
+to include the extra fields to the form v  cretead v need to add a new file in our app dir,
+
+and need to import django forms, UserCreationForm and User Model
+
+like,
+
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from django.contrib.auth.models import User
+
+
+now v create a new form class that inherits from UserCreationForm class
+
+like,
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+# import user model
+from django.contrib.auth.models import User
+
+
+# create form
+class RegisterForm(UserCreationForm):
+    # add fields for the form
+    email = forms.EmailField(required=True)
+
+    # Specify Meta class to configure the form with the user model.
+    class Meta:
+        # specify the model to interact with this new form.
+        model = User
+        # specify the field to be shown in the form 
+        fields = ['username', 'email', 'password1', 'password2']
+
+
+
+
+what is class Meta?
+-------------------------
+
+by using class Meta, v gre a nested namespace used to configure our form in relation with model,
+
+so this v let our form to create fields from our model,
+and these new fields will replace the fields already in our form.
+and fields will be created in the order we specify.
 
 
 
 
 
 
+installing 3rd party django application called django-crispy-forms
+
+to style the form more better,
+
+it uses bootstrap 4 styling for the forms.
+
+so to install it,
+
+pip install django-crispy-forms
+
+later in settings.py, specify this app in the installed app and specif which bootstrap this shud use,
+like below,
+
+INSTALLED_APPS = [
+    ...
+
+    'crispy_forms',
+]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+
+
+and load it in template
+like,
+{% load crsipy_forms_tags %}
+
+and specify it after form tag
+like,
+{{form|crispy}}
 
 
 
