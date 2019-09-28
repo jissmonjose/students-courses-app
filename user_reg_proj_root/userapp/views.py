@@ -19,14 +19,14 @@ def register(request):
             username = form.cleaned_data.get('username')
             # display a flash messages if success,
             messages.success(request, f'Account Created for {username}')
-            # redirect to a new page once submited. here home is name of the urlpattern that renders home page.
-            return redirect('home')
+            # redirect to a login page once submited. here login is name of the urlpattern that renders login page.
+            return redirect('login')
 
     else:
         # if not post request, create an instance of form
         form = RegisterForm()
     # render the templates and pass the form as key value pair. thus v can acces it with in tht template
-    return render(request, 'userapp/register.html', {'form1': form})
+    return render(request, 'userapp/register.html', {'form': form})
 
 
 # home view

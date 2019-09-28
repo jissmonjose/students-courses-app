@@ -139,9 +139,58 @@ and load it in template
 like,
 {% load crsipy_forms_tags %}
 
-and specify it after form tag
+and specify it after form tag 
 like,
 {{form|crispy}}
+
+
+
+
+
+
+Login and Logout
+---------------------
+
+LoginView and LogoutView -- built in class based views.
+ 
+so import both from django.contrib.auth 
+
+
+then specify path of both login and logiut in urlpatterns
+
+
+from django.contrib.auth import views as auth_views
+
+auth_views is an alias for that views.
+so it do not conflict other views.
+
+urlpatterns = [
+    path('login/', auth_views.LoginView.as_view(template_name='userapp/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='userapp/login.html'), name='logout'),
+]
+
+here as_views() mthod takes a parameter called template_name which contains the template to be looked while v route to login/ or logout/
+
+
+login.html
+-------------------
+{{form|crispy}} -- to get the form fields
+
+
+and when v try to login it navigates to accounts/profile/ route.
+which not exist.
+
+so to change that default while user login,
+
+in settings.py file
+
+add this,
+
+LOGN_REDIRECT_URL ='home'
+
+where home is the name of path that navigates to home page.
+
+
 
 
 

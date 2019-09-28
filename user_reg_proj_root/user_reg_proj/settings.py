@@ -121,4 +121,5 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 # crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
+# login redirect
+LOGIN_REDIRECT_URL = 'home'
