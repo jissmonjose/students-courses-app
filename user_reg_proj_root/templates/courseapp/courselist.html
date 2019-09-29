@@ -1,0 +1,22 @@
+{% extends 'courseapp/base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h3 class="display-6 mt-5">
+            Courses
+        </h3>
+        {% if course %}
+
+        <ul class="list-group mt-3 d-inline-block">
+            {% for each in course %}
+                <a class="list-group-item list-group-item-action"
+                href="{% url 'each_courses' each.id %}">{{ each }}</a>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+
+
+{% endblock %}

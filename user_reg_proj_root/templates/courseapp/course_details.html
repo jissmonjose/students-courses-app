@@ -1,0 +1,41 @@
+{% extends 'courseapp/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% if each_one %}
+<div class="row mb-5 fields mt-5">
+    <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+
+                <li class="list-group-item text-secondary">
+                   Asking Price:
+                  <span class="float-right">{{each_one.code}}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                   Bedrooms:
+                  <span class="float-right">{{each_one.name}}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                   Bathrooms:
+                  <span class="float-right">{{each_one.duration}}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                   Garage:
+                  <span class="float-right">{{each_one.fees}}
+                  </span>
+                </li>
+                <li class="list-group-item text-secondary">
+                   Garage:
+                  <span class="float-right">{{each_one.trainer}}
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}
