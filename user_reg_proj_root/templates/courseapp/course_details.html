@@ -1,41 +1,50 @@
 {% extends 'courseapp/base.html' %}
 
+{% load humanize %}
 {% block content %}
 
-<div class="container">
+
     {% if each_one %}
+
+    <div class="container">
 <div class="row mb-5 fields mt-5">
     <div class="col-md-6">
           <ul class="list-group list-group-flush">
 
                 <li class="list-group-item text-secondary">
-                   Asking Price:
+                   Course Code:
                   <span class="float-right">{{each_one.code}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                   Bedrooms:
+                   Course Name:
                   <span class="float-right">{{each_one.name}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                   Bathrooms:
+                   Duration:
                   <span class="float-right">{{each_one.duration}}</span>
                 </li>
                 <li class="list-group-item text-secondary">
-                   Garage:
-                  <span class="float-right">{{each_one.fees}}
+                   Fees:
+                  <span class="float-right">{{each_one.fees|intcomma}}
                   </span>
                 </li>
                 <li class="list-group-item text-secondary">
-                   Garage:
+                   Trainer:
                   <span class="float-right">{{each_one.trainer}}
                   </span>
                 </li>
               </ul>
+        <div class="pt-4">
+        <button type="submit" class="btn btn-secondary float-left px-4">Update</button>
+        <button type="submit" class="btn btn-danger float-right px-4">Delete</button>
             </div>
-
     </div>
-    {% endif %}
 </div>
+    </div>
+
+
+    {% endif %}
+
 
 
 {% endblock %}
