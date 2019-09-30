@@ -1,0 +1,20 @@
+{% extends 'batchapp/base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h3 class="display-6 mt-5">
+            Batches
+        </h3>
+        <ul class="list-group mt-3 d-inline-block">
+            {% for obj in batch %}
+                <a class="list-group-item list-group-item-action"
+                href="{% url 'batch_list' %}">{{ obj }}</a>
+            {% endfor %}
+        </ul>
+            </div>
+
+
+
+
+{% endblock %}

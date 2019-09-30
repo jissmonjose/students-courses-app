@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.forms import ModelForm
 
 from .models import Batch
@@ -12,6 +12,7 @@ class BatchForm(ModelForm):
         fields = '__all__'
 
 
+# create batch
 def batch(request, template_name='batchapp/give_batch.html'):
     form = BatchForm(request.POST or None)
     if form.is_valid():
@@ -20,3 +21,7 @@ def batch(request, template_name='batchapp/give_batch.html'):
     return render(request, template_name, {'form': form})
 
 
+# list batches
+def batch_list(request, template_name='batchapp/batches.html'):
+    batches = Batch.objects.all()
+    return render(request, template_name, {'batch': batches})
