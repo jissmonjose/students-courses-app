@@ -27,11 +27,3 @@ def each_courses(request, pk, template_name='courseapp/course_details.html'):
     return render(request, template_name, {'each_one': each_one})
 
 
-# course update
-def course_update(request, pk, template_name='courseapp/edit_details.html'):
-    data = get_object_or_404(CourseModel, pk=pk)
-    form = CourseForm(request.POST or None, instance=data)
-    if form.is_valid():
-        form.save()
-        return redirect('course_list')
-    return render(request, template_name, {'form': form})

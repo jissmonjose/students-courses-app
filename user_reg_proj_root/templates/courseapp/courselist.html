@@ -11,7 +11,7 @@
         <ul class="list-group mt-3 d-inline-block">
             {% for each in course %}
                 <a class="list-group-item list-group-item-action"
-                href="{% url 'each_courses' each.pk %}">{{ each }}</a>
+                href="{% url 'course_list' %}">{{ each }}</a>
             {% endfor %}
         </ul>
         {% endif %}
