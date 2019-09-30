@@ -25,3 +25,10 @@ def batch(request, template_name='batchapp/give_batch.html'):
 def batch_list(request, template_name='batchapp/batches.html'):
     batches = Batch.objects.all()
     return render(request, template_name, {'batch': batches})
+
+
+# each courses
+def each_batch(request, pk, template_name='batchapp/batch_details.html'):
+    each_bch = Batch.objects.get(pk=pk)
+    return render(request, template_name, {'each_bch': each_bch})
+

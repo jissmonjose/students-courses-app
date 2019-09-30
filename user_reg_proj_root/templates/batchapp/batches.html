@@ -9,7 +9,7 @@
         <ul class="list-group mt-3 d-inline-block">
             {% for obj in batch %}
                 <a class="list-group-item list-group-item-action"
-                href="{% url 'batch_list' %}">{{ obj }}</a>
+                href="{% url 'each_batch' obj.pk %}">{{ obj }}</a>
             {% endfor %}
         </ul>
             </div>
