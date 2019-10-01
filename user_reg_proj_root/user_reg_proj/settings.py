@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'courseapp.apps.CourseappConfig',
     'trainers.apps.TrainersConfig',
     'batchapp.apps.BatchappConfig',
+    'studentapp.apps.StudentappConfig',
     'crispy_forms',
     'django.contrib.humanize',
     'django.contrib.admin',

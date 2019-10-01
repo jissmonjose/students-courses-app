@@ -1,0 +1,37 @@
+{% extends 'courseapp/base.html' %}
+
+{% load humanize %}
+{% block content %}
+
+
+    {% if each_bch %}
+
+    <div class="container">
+<div class="row mb-5 fields mt-5">
+    <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+
+                <li class="list-group-item text-secondary">
+                   Batch Number:
+                  <span class="float-right">{{each_bch.batch_number}}</span>
+                </li>
+                <li class="list-group-item text-secondary">
+                   Course Name:
+                  <span class="float-right">{{each_bch.course}}</span>
+                </li>
+
+              </ul>
+        <div class="pt-4">
+        <a href="#" class="btn btn-secondary float-left px-4">Update</a>
+        <a href="#" class="btn btn-danger float-right px-4">Delete</a>
+            </div>
+    </div>
+</div>
+    </div>
+
+
+    {% endif %}
+
+
+
+{% endblock %}
