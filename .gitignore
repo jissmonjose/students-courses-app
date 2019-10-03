@@ -3,3 +3,4 @@
 db.sqlite3
 *.pyc
 /__pycache__
+user_reg_proj_root/static/
