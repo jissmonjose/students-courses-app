@@ -1,0 +1,37 @@
+{% extends 'trainers/base.html'%}
+
+
+{% block content%}
+<div class="container">
+    <div class="row mb-5 fields mt-5">
+    <div class="col-md-6">
+    {% if new %}
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-secondary">Name:
+            <span class="float-right"> {{new.name}}</span>
+        </li>
+        <li class="list-group-item text-secondary">Email:
+            <span class="float-right">{{new.email}}</span>
+        </li>
+        <li class="list-group-item text-secondary">Phone:
+            <span class="float-right">{{new.phone}}</span>
+        </li>
+        <li class="list-group-item text-secondary">Photo:
+            <span class="float-right">{{new.photo}}</span>
+        </li>
+
+    </ul>
+          <div class="pt-4">
+        <a href="#" class="btn btn-secondary float-left px-4">Update</a>
+        <a href="#" class="btn btn-danger float-right px-4">Delete</a>
+            </div>
+        {% endif %}
+    </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock%}

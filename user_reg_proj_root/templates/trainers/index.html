@@ -4,6 +4,22 @@
 {% load humanize %}
 
 {% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {{form|crispy}}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info">Save</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
