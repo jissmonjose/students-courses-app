@@ -34,6 +34,5 @@ def course_view(request, template_name='studentapp/courses.html'):
     return render(request, template_name, context)
 
 
-def each_course(request, template_name='studentapp/'):
-    pass
-
+def each_course(request, course_id, template_name='studentapp/each_course.html'):
+    return render(request, template_name)

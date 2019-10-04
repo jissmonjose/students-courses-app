@@ -1,0 +1,56 @@
+{% extends 'studentapp/base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Artificial Intelligence</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="courses" class="py-4">
+
+    <div class="container">
+        <a href="{% url 'course_view' %}" class="btn btn-secondary mb-4">
+            Back to Courses
+        </a>
+
+<!--        course syllabus-->
+
+        <div class="row mb-5">
+            <div class="col-md-8">
+                <h1 class="display-6">Syllabus</h1>
+                <p class="text-justify">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia recusandae esse reiciendis officia omnis non rerum dicta
+              cupiditate nostrum molestias deserunt aut minus inventore animi atque, consequuntur ad fugit. Possimus culpa
+              blanditiis repellendus ipsa similique ullam, natus error dolor harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia recusandae esse reiciendis officia omnis non rerum dicta
+              cupiditate nostrum molestias deserunt aut minus inventore animi atque, consequuntur ad fugit. Possimus culpa
+              blanditiis repellendus ipsa similique ullam, natus error dolor harum.
+                </p>
+                <div class="mb-3">
+                    <a href="{%url 'student_register' %}" class="btn btn-outline-info">Apply Here</a>
+                </div>
+            </div>
+
+        <div class="col-md-3">
+            <div class="card mb-3">
+                 <img class="card-img-top" src="{% static 'img/harry.jpg' %}" alt="trainer image">
+                <div class="card-body">
+                    <h5 class="card-title">Program Trainer</h5>
+                    <h6 class="text-secondary">Harry Johns</h6>
+                </div>
+            </div>
+        </div>
+   </div>
+
+    </div>
+
+
+</section>
+
+{% endblock %}
+

@@ -26,7 +26,8 @@
                       </p>
                   </div>
                   <hr>
-                   <a href="#" class="btn btn-primary btn-block">More Info</a>
+
+                   <a href="{% url 'each_course' course.id %}" class="btn btn-primary btn-block">More Info</a>
               </div>
             </div>
         </div>
@@ -70,7 +71,7 @@
             {% endfor %}
 
             <!-- if there is next page then -->
-            {% if listing.has_next %}
+            {% if courses.has_next %}
               <li class="page-item">
                 <a href="?page={{courses.next_page_number}}" class="page-link">&raquo;</a>
               </li>
