@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12">
-                <h1 class="display-4">Artificial Intelligence</h1>
+                <h1 class="display-4">{{course.name}}</h1>
             </div>
         </div>
     </div>
@@ -38,10 +38,14 @@
 
         <div class="col-md-3">
             <div class="card mb-3">
-                 <img class="card-img-top" src="{% static 'img/harry.jpg' %}" alt="trainer image">
+                <!--here include the photo that stored in media/photos dir-->
+                <!--here photo is the field name-->
+                <!-- course.trainer.photo.url is used to get the image of each trainer-->
+                <!--trainer is a foregin key field and photo is field in trainers models and later url-->
+                 <img class="card-img-top" src="{{course.trainer.photo.url}}" alt="trainer image">
                 <div class="card-body">
                     <h5 class="card-title">Program Trainer</h5>
-                    <h6 class="text-secondary">Harry Johns</h6>
+                    <h6 class="text-secondary">{{course.trainer}}</h6>
                 </div>
             </div>
         </div>

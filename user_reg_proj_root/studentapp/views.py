@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.forms import ModelForm
 from .models import Student
 from courseapp.models import CourseModel
@@ -34,5 +34,7 @@ def course_view(request, template_name='studentapp/courses.html'):
     return render(request, template_name, context)
 
 
+# view for each courses
 def each_course(request, course_id, template_name='studentapp/each_course.html'):
-    return render(request, template_name)
+    course = get_object_or_404(CourseModel, pk=course_id)
+    return render(request, template_name, {'course': course})

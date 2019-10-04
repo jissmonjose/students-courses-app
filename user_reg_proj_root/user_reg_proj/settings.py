@@ -129,3 +129,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # login redirect
 LOGIN_REDIRECT_URL = 'home'
+
+# media folder
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
