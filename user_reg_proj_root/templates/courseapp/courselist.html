@@ -8,7 +8,7 @@
         </h3>
         {% if course %}
 
-        <ul class="list-group mt-3 d-inline-block">
+        <ul class="list-group mt-4 mb-5 d-inline-block">
             {% for each in course %}
                 <a class="list-group-item list-group-item-action"
                 href="{% url 'each_courses' each.pk %}">{{ each }}</a>
