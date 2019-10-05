@@ -32,3 +32,8 @@ def register(request):
 # home view
 def home(request):
     return render(request, 'userapp/home.html')
+
+
+# index view
+def index_page(request):
+    return render(request, 'userapp/index.html')

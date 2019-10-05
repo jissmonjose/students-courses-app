@@ -1,6 +1,7 @@
 {% extends 'userapp/base.html' %}
 
 {% block content %}
+<div class="box-1" style="min-height: 100vh">
 <h1>Home Page</h1>
 <div>
     <a href="{% url 'logout' %}">Logout</a>
@@ -9,5 +10,6 @@
     <a href="{% url 'course_view' %}">Courses Available</a>
     <a href="{% url 'trainer_create' %}">Add trainers</a>
 </div>
+    </div>
 {% endblock %}
 
