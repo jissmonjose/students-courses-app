@@ -37,3 +37,8 @@ def home(request):
 # index view
 def index_page(request):
     return render(request, 'userapp/index.html')
+
+
+# about view
+def about_page(request):
+    return render(request, 'userapp/about.html')

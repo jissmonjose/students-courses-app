@@ -16,13 +16,13 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3" style="margin: 0 !important">
         <div class="container">
-            <a href="#" class="navbar-brand">Luminr Technolab</a>
+            <a href="#" class="navbar-brand">Luminar Technolab</a>
             <ul class="navbar-nav">
                 <li class="nav-item mr-3">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="{% url 'index_page' %}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item mr-3">
-                    <a href="#" class="nav-link">About</a>
+                    <a href="{% url 'about_page' %}" class="nav-link">About</a>
                 </li>
                 <li class="nav-item mr-3">
                     <a href="#" class="nav-link">Contact</a>
@@ -40,7 +40,7 @@
                 <p class="lead">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quaerat.
                 </p>
-                <a href="#" class="btn btn-outline-success">Explore</a>
+                <a href="{% url 'course_view' %}" class="btn btn-outline-success">Explore</a>
             </div>
         
         </div>
