@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.shortcuts import redirect
 from .newform import RegisterForm
+from django.forms import ModelForm
+from .models import Contact
 
 
 # Create your views here.
@@ -42,3 +44,19 @@ def index_page(request):
 # about view
 def about_page(request):
     return render(request, 'userapp/about.html')
+
+
+class ContactForm(ModelForm):
+    class Meta:
+        model = Contact
+        fields = '__all__'
+
+
+# contact view
+
+def contact(request, template_name='userapp/contact.html'):
+    contact_form = ContactForm(request.POST or None)
+    if contact_form.is_valid():
+        contact_form.save()
+        return redirect('index_page')
+    return render(request, template_name, {'contact_form': contact_form})

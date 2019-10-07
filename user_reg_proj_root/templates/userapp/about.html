@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 {% load static %}
@@ -30,10 +31,10 @@
             <a href="{% url 'index_page' %}" class="nav-link">Home</a>
           </li>
           <li class="nav-item active">
-            <a href="about.html" class="nav-link">About Us</a>
+            <a href="{% url 'about_page' %}" class="nav-link">About Us</a>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
           </li>
         </ul>
       </div>
@@ -41,20 +42,7 @@
   </nav>
 
   <!-- page header -->
-  <header id="page-header">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-6 text-center m-auto">
-                  <h1>About Us</h1>
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, adipisci.
-                  </p>
-              </div>
-          </div>
-      </div>
-  </header>
-
-<!-- About section -->
+  {% include 'partial/_header.html'%}
 
   <!-- ABOUT SECTION -->
   <section id="about" class="py-3">
@@ -80,7 +68,7 @@
 
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="p-4 bg-dark text-white">
+  <section id="testimonials" class="p-4 text-white" style="background: #3b435b">
     <div class="container">
       <h2 class="text-center">testimonials</h2>
       <div class="row text-center">
@@ -122,6 +110,18 @@
     </div>
   </section>
 
+<!--  footer -->
+  <footer id="main-footer" class="text-center p-4 bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Copyright &copy;
+            <span id="year">2019</span>&nbsp;Luminar Technolab
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 
@@ -136,8 +136,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha256-zUQGihTEkA4nkrgfbbAM1f3pxvnWiznBND+TuJoUv3M=" crossorigin="anonymous"></script>
 
   <script>
-    // Get the current year for the copyright
-    $('#year').text(new Date().getFullYear());
 
     $('.slider').slick({
       infinite: true,
