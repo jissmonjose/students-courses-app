@@ -1,0 +1,50 @@
+{% extends 'userapp/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row py-5">
+        <div class="col-md-6">
+            {% if stud %}
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item text-secondary">Name:
+                    <span class="float-right">{{stud.name}}</span>
+                  </li>
+
+                    <li class="list-group-item text-secondary">
+                        Address:
+                        <span class="float-right">{{stud.address}}</span>
+                    </li>
+
+                      <li class="list-group-item text-secondary">
+                        Email:
+                        <span class="float-right">{{stud.email}}</span>
+                    </li>
+
+                      <li class="list-group-item text-secondary">
+                        Contact:
+                        <span class="float-right">{{stud.phone}}</span>
+                    </li>
+
+                      <li class="list-group-item text-secondary">
+                        Course:
+                        <span class="float-right">{{stud.select_course}}</span>
+                    </li>
+
+                      <li class="list-group-item text-secondary">
+                        Batch:
+                        <span class="float-right">{{stud.select_batch}}</span>
+                    </li>
+
+                      <li class="list-group-item text-secondary">
+                        Date Registered:
+                        <span class="float-right">{{stud.date}}</span>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

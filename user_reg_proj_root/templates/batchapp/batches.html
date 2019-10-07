@@ -5,15 +5,19 @@
 {% block content %}
 
     <div class="container">
-        <h3 class="display-6 mt-5">
+        <div class="row py-5">
+            <div class="col-md-6">
+        <h1 class="text-info">
             Batches
-        </h3>
-        <ul class="list-group mt-3 mb-5 d-inline-block">
+        </h1>
+        <div class="list-group">
             {% for obj in batch %}
                 <a class="list-group-item list-group-item-action"
                 href="{% url 'each_batch' obj.pk %}">{{ obj }}</a>
             {% endfor %}
-        </ul>
+        </div>
+            </div>
+        </div>
             </div>
 
 

@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.shortcuts import redirect
 from .newform import RegisterForm
 from django.forms import ModelForm
 from .models import Contact
+from studentapp.models import Student
 
 
 # Create your views here.
@@ -60,3 +61,21 @@ def contact(request, template_name='userapp/contact.html'):
         contact_form.save()
         return redirect('index_page')
     return render(request, template_name, {'contact_form': contact_form})
+
+
+# view students
+def view_students(request, template_name='userapp/students.html'):
+    students_data = Student.objects.all().order_by('name')
+    context = {
+        'students_data': students_data
+    }
+    return render(request, template_name, context)
+
+
+# each students
+def each_student_details(request, stud_id, template_name='userapp/each_stud_details.html'):
+    stud = get_object_or_404(Student, pk=stud_id)
+    context = {
+        'stud': stud
+    }
+    return render(request, template_name, context)

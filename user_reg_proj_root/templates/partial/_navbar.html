@@ -1,21 +1,21 @@
- <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <div class="container">
-            <a href="{% url 'index_page' %}" class="navbar-brand">Luminar Technolab</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navlinks">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navlinks">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'course_list' %}">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'batch' %}">Batch</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'batch_list' %}">View Batches</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'trainer_view' %}">View Trainers</a></li>
-
-
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Luminar Technolab</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="{% url 'index_page' %}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'about_page' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
