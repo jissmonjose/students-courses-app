@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 
+
+
 <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
         <div class="row text-center">
@@ -9,6 +11,20 @@
                 <h1 class="display-4">Browse Courses</h1>
             </div>
         </div>
+    </div>
+</section>
+
+
+<!--breadcrumb navigation-->
+<section id="bc" class="mt-3">
+
+    <div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'index_page' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Courses</li>
+        </ol>
+    </nav>
     </div>
 </section>
 
@@ -37,7 +53,8 @@
                   </div>
                   <hr>
 
-                   <a href="{% url 'each_course' course.id %}" class="btn btn-primary btn-block">More Info</a>
+                   <a href="{% url 'each_course' course.id %}" class="btn btn-primary btn-block" id="button1"
+                   >More Info</a>
               </div>
             </div>
         </div>
@@ -99,6 +116,7 @@
 
     </div>
  </section>
+
 
 
 {% endblock %}
