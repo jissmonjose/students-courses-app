@@ -9,7 +9,7 @@
     crossorigin="anonymous">
 
     <!-- link to css files -->
-    <link rel="stylesheet" href="{% static 'style_course.css' %}">
+    <link rel="stylesheet" href="{% static 'course_style.css' %}">
     <link rel="stylesheet" href="{% static 'footer.css' %}">
 
     <title>Document</title>
@@ -17,7 +17,31 @@
 <body>
 
     <!--navbar-->
-    {% include 'partial/_navbar.html' %}
+
+     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">Luminar Technolab</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="{% url 'index_page' %}" class="nav-link">Home</a>
+          </li>
+            <li class="nav-item active">
+            <a href="{% url 'course_view' %}" class="nav-link">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'about_page' %}" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
         <!-- messages -->
     {% if messages %}

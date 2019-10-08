@@ -13,9 +13,9 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
-    <link rel="stylesheet" href="{% static 'new.css' %}">
+    <link rel="stylesheet" href="{% static 'style_new.css' %}">
 
-  <title>Luminar Technolab</title>
+  <title>Luminar|About</title>
 </head>
 
 <body>
@@ -29,6 +29,9 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a href="{% url 'index_page' %}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'course_view' %}" class="nav-link">Courses</a>
           </li>
           <li class="nav-item active">
             <a href="{% url 'about_page' %}" class="nav-link">About Us</a>
@@ -60,7 +63,7 @@
             praesentium temporibus adipisci debitis labore!</p>
         </div>
         <div class="col-md-6">
-          <img src="https://source.unsplash.com/random/700x700/?education" alt="" class="img-fluid rounded-circle d-none d-md-block about-img">
+          <img src="{% static 'img/image6.jpg' %}" alt="" class="img-fluid rounded-circle d-none d-md-block about-img">
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 {% extends 'studentapp/base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
 
 
@@ -34,7 +35,7 @@
         {% if courses %}
         {% for course in courses %}
         <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card-body">
+          <div class="card-body" style="background: ghostwhite">
               <div class="listing-heading text-center">
                   <h4 class="text-primary"> {{course.name}}</h4>
               </div>
@@ -42,13 +43,13 @@
               <div class="row py-2 text-secondary">
                   <div class="col-6">
                       <p>
-                        duration: {{course.duration}}
+                        Duration: {{course.duration}}
                       </p>
                       <p>
-                        fees: {{course.fees}}
+                        Fees: {{course.fees|intcomma}}
                       </p>
                       <p>
-                        trainer: {{course.trainer}}
+                        Trainer: {{course.trainer}}
                       </p>
                   </div>
                   <hr>
