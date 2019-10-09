@@ -4,9 +4,26 @@
 
 {% block content %}
 
+
+
+
     <div class="container">
         <div class="row py-5">
             <div class="col-md-6">
+                <!--    breadcrumb -->
+                <section id="bc mb-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'home' %}">Admin Home</a>
+                            </li>
+
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Batches
+                            </li>
+                        </ol>
+                    </nav>
+                </section>
         <h1 class="text-info">
             Batches
         </h1>

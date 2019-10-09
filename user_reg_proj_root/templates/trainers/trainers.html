@@ -4,6 +4,20 @@
 <div class="container">
     <div class="row mb-5 mt-5">
     <div class="col-md-6">
+<!--        breadcrumb navigations -->
+           <section id="bc" class="mb-5">
+            <div class="container">
+
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Trainers</li>
+                </ol>
+              </nav>
+            </div>
+        </section>
+
+
     {% if data %}
     <div class="list-group">
     {% for trainer in data %}

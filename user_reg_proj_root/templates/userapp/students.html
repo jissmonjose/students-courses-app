@@ -5,6 +5,18 @@
 <div class="container">
     <div class="row py-5">
         <div class="col-md-6">
+
+                        <section id="bc" class="mb-3">
+
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Students</li>
+                </ol>
+              </nav>
+        </section>
+
+
             <h1 class="text-info">Students</h1>
             {% if students_data %}
             {% for student in students_data %}

@@ -14,30 +14,9 @@
   </style>
 <body>
     <!-- navbar -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container">
-      <a href="{% url 'index_page' %}" class="navbar-brand">Luminar Technolab</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a href="{% url 'index_page' %}" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'course_view' %}" class="nav-link">Courses</a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'about_page' %}" class="nav-link">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    {% include 'partial/_navbar2.html' %}
+
+    <!-- page Header -->
     <header>
         <div id="showcase">
             <div class="showcase-content">

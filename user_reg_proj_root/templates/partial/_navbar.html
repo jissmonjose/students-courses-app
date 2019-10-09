@@ -1,20 +1,21 @@
  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-      <a href="index.html" class="navbar-brand">Luminar Technolab</a>
+      <a href="{% url 'index_page' %}" class="navbar-brand">Luminar Technolab</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a href="{% url 'index_page' %}" class="nav-link">Home</a>
+            <div class="dropdown show">
+            <a href="{% url 'home' %}" class="nav-link btn btn-secondary text-light dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">My Home</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </div>
           </li>
-          <li class="nav-item">
-            <a href="{% url 'about_page' %}" class="nav-link">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
-          </li>
+
+
         </ul>
       </div>
     </div>

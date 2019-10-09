@@ -6,7 +6,21 @@
     <div class="row mb-5 fields mt-5">
     <div class="col-md-6">
     {% if new %}
+        <!--breadcrumb -->
+        <section id="bc" class="mb-5">
+            <div class="container">
+
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'trainer_view' %}">Trainers</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">{{new.name}}</li>
+                </ol>
+              </nav>
+            </div>
+        </section>
     <ul class="list-group list-group-flush">
+        <h1 class="text-info">Trainer Info</h1>
         <li class="list-group-item text-secondary">Name:
             <span class="float-right"> {{new.name}}</span>
         </li>
