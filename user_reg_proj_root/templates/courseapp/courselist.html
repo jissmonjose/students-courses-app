@@ -5,8 +5,22 @@
     <div class="container">
         <div class="row py-5">
             <div class="col-md-6">
+                <section id="bc">
 
-        <h1 class="text-info">
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'home' %}">Admin Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Courses
+                            </li>
+                        </ol>
+                    </nav>
+                </section>
+
+        <h1 class="text-info mt-3">
             Courses
         </h1>
         {% if course %}

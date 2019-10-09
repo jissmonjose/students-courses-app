@@ -40,3 +40,4 @@ class CourseEdit(UpdateView):
     model = CourseModel
     fields = '__all__'
     success_url = reverse_lazy('course_list')
+

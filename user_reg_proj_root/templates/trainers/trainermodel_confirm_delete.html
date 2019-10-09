@@ -1,0 +1,21 @@
+
+{% extends 'trainers/base.html' %}
+
+{% block content%}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+
+    <form method="post">
+        {% csrf_token %}
+        <span class="text-center text-secondary">Are u sure want to delete "{{object}}" ?</span>
+
+        <input type="submit" value="Submit" class="btn btn-secondary">
+        <a href="{% url 'trainer_view' %}" class="btn btn-info ml-3">Back to Courses</a>
+    </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.forms import ModelForm
 from .models import TrainerModel
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView, UpdateView
 
 
 # create a model form
@@ -35,3 +37,16 @@ def trainer_one(request, trainer_id, template_name='trainers/each_trainer.html')
     new = get_object_or_404(TrainerModel, pk=trainer_id)
     context = {'new': new}
     return render(request, template_name, context)
+
+
+# remove trainer
+class TrainerDelete(DeleteView):
+    model = TrainerModel
+    success_url = reverse_lazy('trainer_view')
+
+
+# edit a trainer
+class TrainerEdit(UpdateView):
+    model = TrainerModel
+    fields = ('name', 'email', 'phone', 'experience')
+    success_url = reverse_lazy('trainer_view')

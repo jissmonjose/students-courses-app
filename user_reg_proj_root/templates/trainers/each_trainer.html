@@ -23,8 +23,8 @@
 
     </ul>
           <div class="pt-4">
-        <a href="#" class="btn btn-secondary float-left px-4">Update</a>
-        <a href="#" class="btn btn-danger float-right px-4">Delete</a>
+        <a href="{% url 'trainer_edit' new.id %}" class="btn btn-secondary float-left px-4">Update</a>
+        <a href="{% url 'trainer_delete' new.id %}" class="btn btn-danger float-right px-4">Delete</a>
             </div>
         {% endif %}
     </div>

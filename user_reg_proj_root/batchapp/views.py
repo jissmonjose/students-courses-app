@@ -32,19 +32,16 @@ def batch_list(request, template_name='batchapp/batches.html'):
 
 
 # each batches
-def each_batch(request, pk, template_name='batchapp/batch_details.html'):
-    each_bch = Batch.objects.get(pk=pk)
-    return render(request, template_name, {'each_bch': each_bch})
-
-
-# delete batches
-class BatchDelete(DeleteView):
-    model = Batch
-    reverse_lazy('batch_list')
+def each_batch(request, batch_id, template_name='batchapp/batch_details.html'):
+    each_bch = get_object_or_404(Batch, pk=batch_id)
+    context = {
+        'each_bch': each_bch
+    }
+    return render(request, template_name, context)
 
 
 # update batch
 class BatchEdit(UpdateView):
     model = Batch
     fields = '__all__'
-    reverse_lazy('batch_list')
+    success_url = reverse_lazy('batch_list')

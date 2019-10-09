@@ -7,10 +7,30 @@
     {% if each_one %}
 
     <div class="container">
-<div class="row mb-5 fields mt-5">
+        <div class="row mb-5 fields mt-5">
     <div class="col-md-6">
-          <ul class="list-group list-group-flush">
 
+
+<!--        breadcrumb -->
+    <section id="bc">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'home' %}">Admin Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{% url 'course_list' %}">Courses</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    {{each_one.name}}
+                </li>
+            </ol>
+
+
+        </nav>
+    </section>
+          <ul class="list-group list-group-flush mt-5">
+        <h3 class="text-info">Course Info</h3>
                 <li class="list-group-item text-secondary">
                    Course Code:
                   <span class="float-right">{{each_one.code}}</span>
@@ -35,6 +55,7 @@
                   </span>
                 </li>
               </ul>
+
         <div class="pt-4">
         <a href="{% url 'course_edit' each_one.id %}" class="btn btn-secondary float-left px-4">Update</a>
         <a href="{% url 'course_delete' each_one.id %}" class="btn btn-danger float-right px-4">Delete</a>
