@@ -7,13 +7,38 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <div class="dropdown show">
-            <a href="{% url 'home' %}" class="nav-link btn btn-secondary text-light dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">My Home</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Logout</a>
-              </div>
-            </div>
+            <a href="{% url 'home' %}"
+            {% if 'logout' in request.path %}
+                class="nav-link d-none"
+            {% elif 'login' in request.path %}
+                class="nav-link d-none"
+              {% elif 'register' in request.path %}
+                              class="nav-link d-none"
+            {% else %}
+                class="nav-link"
+            {% endif %}
+            >My Home
+            </a>
+
+
+
+
           </li>
+
+          <li class="nav-item">
+                        <a href="{% url 'logout' %}"
+                           {% if 'logout' in request.path %}
+                              class="nav-link d-none"
+
+                            {% else %}
+                              class="nav-link btn btn-secondary mx-3">
+                            {% endif %}
+                            Logout
+                        </a>
+
+          </li>
+
+
 
 
         </ul>

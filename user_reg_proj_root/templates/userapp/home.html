@@ -4,19 +4,49 @@
 
 <div class="container">
     <div class="row py-5">
-        <div class="col-md-6">
     <h1 class="text-info text-center">Admin Home</h1>
-    <div>
-        <a href="{% url 'logout' %}" class="btn btn-danger m-3">Logout</a>
-        <a href="{% url 'course_create' %}" class="btn btn-danger m-3">Create Course</a>
-        <a href="{% url 'batch_list' %}" class="btn btn-danger m-3">Batches</a>
-        <a href="{% url 'trainer_create' %}" class="btn btn-danger m-3">Add trainers</a>
-        <a href="{% url 'view_students' %}" class="btn btn-danger m-3">View Students</a>
-        <a href="{% url 'course_list' %}" class="btn btn-danger m-3">Courses</a>
-        <a href="{% url 'batch' %}" class="btn btn-danger m-3">Add Batches</a>
-        <a href="{% url 'trainer_view' %}" class="btn btn-danger m-3">View Trainers</a>
-    </div>
-    </div>
+
+        <div class="col-md-12">
+
+            <div class="dropdown show float-left mx-3">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Course</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                 <a class="dropdown-item" href="{% url 'course_create' %}">Add</a>
+                 <a class="dropdown-item" href="{% url 'course_list' %}">View</a>
+            </div>
+            </div>
+
+            <div class="dropdown show float-left mx-3">
+                   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Batches</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                 <a class="dropdown-item" href="{% url 'batch' %}">Add</a>
+                 <a class="dropdown-item" href="{% url 'batch_list' %}">View</a>
+            </div>
+            </div>
+
+
+            <div class="dropdown show float-left mx-3">
+                   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Students</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                 <a class="dropdown-item" href="{% url 'view_students' %}">View</a>
+            </div>
+            </div>
+
+
+            <div class="dropdown show float-left mx-3">
+                   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Trainers</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                 <a class="dropdown-item" href="{% url 'trainer_create' %}">Add</a>
+                 <a class="dropdown-item" href="{% url 'trainer_view' %}">View</a>
+            </div>
+            </div>
+
+
+        </div>
     </div>
 </div>
 {% endblock %}
