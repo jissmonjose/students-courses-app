@@ -31,7 +31,7 @@
 <!--    search button-->
     <section id="search">
     <div class="container">
-           <form class="form-inline my-3 my-lg-0 mb-5" method="GET" action="">
+           <form class="form-inline" method="GET" action="">
             <input class="form-control mr-sm-2" name="q" type="search" placeholder="search courses" aria-label="Search" value="{{ request.GET.q }}">
              <input type="submit" value="Search" class="btn btn-outline-success my-2 my-sm-0">
     </form>
@@ -40,7 +40,7 @@
 
 </section>
 
- <section id="listings" class="py-4 mt-5">
+ <section id="listings" class="py-4 mt-2">
     <div class="container">
       <div class="row">
         {% if courses %}
@@ -52,7 +52,7 @@
               </div>
               <hr>
               <div class="row py-2 text-secondary">
-                  <div class="col-6">
+                  <div class="col-8">
                       <p>
                         Duration: {{course.duration}}
                       </p>
@@ -86,7 +86,7 @@
           <ul class="pagination">
             {% if courses.has_previous %}
               <li class="page-item">
-                <a class="page-link" href="?page={{courses.previous_page_number}}">&laquo;</a>
+                <a class="page-link" href="?page={{courses.previous_page_number}}&q={{request.GET.q}}">&laquo;</a>
               </li>
             {% else %}
               <li class="page-item disabled">
@@ -104,7 +104,7 @@
               <!--if not the current page v give link to next page
               using page query on href-->
                 <li class="page-item">
-                  <a class="page-link" href="?page={{i}}">{{i}}</a>
+                  <a class="page-link" href="?page={{i}}&q={{request.GET.q}}">{{i}}</a>
                 </li>
               {% endif %}
             {% endfor %}
@@ -112,7 +112,7 @@
             <!-- if there is next page then -->
             {% if courses.has_next %}
               <li class="page-item">
-                <a href="?page={{courses.next_page_number}}" class="page-link">&raquo;</a>
+                <a href="?page={{courses.next_page_number}}&q={{request.GET.q}}" class="page-link">&raquo;</a>
               </li>
             {% else %}
               <li class="page-item disabled">
