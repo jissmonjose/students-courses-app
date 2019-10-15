@@ -36,6 +36,11 @@ def student_register(request, template_name='studentapp/apply.html'):
 
 def course_view(request, template_name='studentapp/courses.html'):
     courses = CourseModel.objects.order_by('name')
+    # search feature
+    query = request.GET.get("q")
+    if query:
+        courses = courses.filter(name__icontains=query)
+
     paginator = Paginator(courses, 3)
     page = request.GET.get('page')
     page_courses = paginator.get_page(page)
