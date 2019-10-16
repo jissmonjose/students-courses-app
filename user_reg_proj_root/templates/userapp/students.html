@@ -17,8 +17,20 @@
         </section>
 
 
-            <h1 class="text-info">Students</h1>
-            {% if students_data %}
+            <h1 class="text-info">Students Info</h1>
+<!--            search box -->
+                <section id="search">
+    <div class="search mb-3">
+           <form class="form-inline" method="GET" action="">
+            <input class="form-control mr-sm-2" name="q" type="search" placeholder="search students" aria-label="Search" value="{{ request.GET.q }}">
+             <input type="submit" value="Search" class="btn btn-outline-success my-2 my-sm-0">
+    </form>
+    </div>
+        </section>
+
+
+
+                {% if students_data %}
             {% for student in students_data %}
 
                 <div class="list-group">
@@ -27,12 +39,13 @@
             {% endfor %}
             {% else %}
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Aw Snap!</strong>No students has applied yet
+                    <strong>No students has applied yet</strong>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
             {% endif %}
+
         </div>
     </div>
 </div>

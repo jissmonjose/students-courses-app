@@ -5,6 +5,7 @@ from .newform import RegisterForm
 from django.forms import ModelForm
 from .models import Contact
 from studentapp.models import Student
+from django.db.models import Q
 
 
 # Create your views here.
@@ -66,6 +67,16 @@ def contact(request, template_name='userapp/contact.html'):
 # view students
 def view_students(request, template_name='userapp/students.html'):
     students_data = Student.objects.all().order_by('name')
+
+    # students_search filter
+    query = request.GET.get("q")
+    if query:
+        students_data = students_data.filter(
+            Q(name__icontains=query) |
+            Q(select_course__name__icontains=query) |
+            Q(select_batch__batch_number__icontains=query)
+        ).distinct()
+
     context = {
         'students_data': students_data
     }

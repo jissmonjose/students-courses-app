@@ -6,37 +6,36 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="{% url 'home' %}"
-            {% if 'logout' in request.path %}
-                class="nav-link d-none"
-            {% elif 'login' in request.path %}
-                class="nav-link d-none"
-              {% elif 'register' in request.path %}
-                              class="nav-link d-none"
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link">My Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'logout' %}" class="nav-link">
+                    Logout
+                </a></li>
             {% else %}
-                class="nav-link"
-            {% endif %}
-            >My Home
-            </a>
-
-
-
-
-          </li>
-
-          <li class="nav-item">
-                        <a href="{% url 'logout' %}"
-                           {% if 'logout' in request.path %}
-                              class="nav-link d-none"
-
-                            {% else %}
-                              class="nav-link btn btn-secondary mx-3">
-                            {% endif %}
-                            Logout
+                       <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link d-none">My Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'logout' %}" class="nav-link d-none">
+                    Logout
+                </a></li>
+                  <li class="nav-item">
+                        <a href="{% url 'register' %}" class="nav-link">
+                            Register
                         </a>
+          </li>
+              <li class="nav-item">
+                    <a href="{% url 'login' %}" class="nav-link">
+                        Login
+                    </a>
 
           </li>
+            {% endif %}
 
 
 
