@@ -1,0 +1,58 @@
+SEARCH FEATURE IN DJANGO
+---------------------------------
+- in template first place a search box
+
+<!--            search box -->
+                <section id="search">
+    <div class="search mb-3">
+           <form class="form-inline" method="GET" action="">
+            <input class="form-control mr-sm-2" name="q" type="search" placeholder="search students" aria-label="Search" value="{{ request.GET.q }}">
+             <input type="submit" value="Search" class="btn btn-outline-success my-2 my-sm-0">
+    </form>
+    </div>
+        </section>
+
+
+- later in views.
+
+def view_students(request, template_name='userapp/students.html'):
+    students_data = Student.objects.all().order_by('name')
+
+    # students_search filter
+    query = request.GET.get("q")
+    if query:
+        students_data = students_data.filter(
+            Q(name__icontains=query) |
+            Q(select_course__name__icontains=query) |
+            Q(select_batch__batch_number__icontains=query)
+        ).distinct()
+
+    context = {
+        'students_data': students_data
+    }
+    return render(request, template_name, context)
+
+
+so here v need to search students using their batch course and name
+so here v need to the get the data if thre is an ydata v filter thru tthat data using name course and batch
+for this v import Q 
+	from django.models import Q
+
+Keyword argument queries-in filter(), and others.-are ANDed together. If you need to execute more complex queries (for example, queries with OR statements), you can use Q objects.
+
+thus v include multiple factors for searching
+later v specify distnict so no duplicates r shown.
+
+
+
+ Q(select_course__name__icontains=query)
+means here select cousre ais a foreign key field related to cousre model
+so v spcify name field in course model and later icontains to get the 
+students name
+if name not used it shows field error,
+
+similar in case select_batch also
+
+
+
+

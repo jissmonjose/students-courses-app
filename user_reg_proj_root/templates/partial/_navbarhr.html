@@ -1,0 +1,46 @@
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a href="{% url 'index_page' %}" class="navbar-brand">Luminar Technolab</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link">My Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'hrapp:logout' %}" class="nav-link">
+                    Logout
+                </a></li>
+            {% else %}
+                       <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link d-none">My Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'hrapp:logout' %}" class="nav-link d-none">
+                    Logout
+                </a></li>
+                  <li class="nav-item">
+                        <a href="{% url 'hrapp:register' %}" class="nav-link">
+                            Register
+                        </a>
+          </li>
+              <li class="nav-item">
+                    <a href="{% url 'hrapp:login' %}" class="nav-link">
+                        Login
+                    </a>
+
+          </li>
+            {% endif %}
+
+
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>

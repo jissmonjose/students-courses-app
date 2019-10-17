@@ -1,0 +1,35 @@
+{% extends 'hrapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <section id="register">
+        <div class="container">
+            <div class="row py-4">
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                    <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <h2 class="text-secondary border-bottom">
+                                Register
+                            </h2>
+                            {{form|crispy}}
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info btn-block">Register</button>
+                        </div>
+                    </form>
+                    <div class="pt-2">
+                        <small class="text-muted">Already have an Account?
+                            <a href="{% url 'hrapp:login' %}">Sign In</a>
+                        </small>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

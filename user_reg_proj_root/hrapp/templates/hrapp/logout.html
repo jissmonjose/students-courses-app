@@ -1,0 +1,11 @@
+{% extends 'hrapp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="py-4">
+        <p class="lead border-bottom">You Have been Logged out</p>
+        <a href="{% url 'hrapp:login' %}">Login Again</a>
+    </div>
+</div>
+
+{% endblock %}
