@@ -1,0 +1,15 @@
+{% extends 'hrapp/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row py-5">
+    <h1 class="text-info text-center">HR Home</h1>
+    </div>
+    <a href="{% url 'hrapp:manage' %}">Add Timetable</a>&nbsp;&nbsp;
+    <a href="{% url 'hrapp:schedule_list' %}">Manage timetable</a>
+</div>
+
+{% endblock %}
+
+

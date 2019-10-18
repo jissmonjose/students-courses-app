@@ -1,0 +1,18 @@
+{% extends 'hrapp/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row py-3">
+        <div class="col-sm-4 mx-auto">
+            <h2 class="text-info">Manage Timetable</h2>
+            <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        {{form|crispy}}
+    </div>
+    <button type="submit" class="btn btn-info btn-block">Save</button>
+  </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

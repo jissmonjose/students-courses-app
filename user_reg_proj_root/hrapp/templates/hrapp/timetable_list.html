@@ -1,0 +1,38 @@
+{% extends 'hrapp/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-md-8">
+                <h2 class="text-info">Time Table for Batches</h2>
+                <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+
+                                <th scope="col">Batch</th>
+                                <th scope="col">StartTime</th>
+                                <th scope="col">EndTime</th>
+                                <th scope="col">ClassRoom</th>
+                            </tr>
+                        </thead>
+                {% for each in schedules %}
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{forloop.counter}}</th>
+
+                                <td>{{each.select_batch}}</td>
+                                <td>{{each.start_time}}</td>
+                                <td>{{each.end_time}}</td>
+                                <td>{{each.classroom}}</td>
+                            </tr>
+                        </tbody>
+
+
+                {% endfor %}
+                      </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
