@@ -2,6 +2,7 @@ from django.db import models
 from courseapp.models import CourseModel
 from batchapp.models import Batch
 from datetime import datetime
+from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.

@@ -31,7 +31,7 @@
               class="nav-item"
             {% endif %}
           >
-            <a href="{% url 'course_view' %}" class="nav-link">Courses</a>
+            <a href="{% url 'studentapp:course_view' %}" class="nav-link">Courses</a>
           </li>
           <li
                   {% if 'about' in request.path %}
@@ -51,6 +51,8 @@
           >
             <a href="{% url 'contact' %}" class="nav-link">Contact</a>
           </li>
+
+            <li> <a href="{% url 'studentapp:login' %}" class="nav-link">Login</a></li>
         </ul>
       </div>
 

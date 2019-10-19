@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+AUTH_USER_MODEL = 'studentapp.Student'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,7 +132,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # login redirect
 LOGIN_URL = 'hrapp:login'
 LOGIN_REDIRECT_URL = 'hrapp:home'
-
 
 # media folder
 MEDIA_URL = '/media/'

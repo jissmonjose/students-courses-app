@@ -19,7 +19,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{% url 'index_page' %}">Home</a></li>
-          <li class="breadcrumb-item"><a href="{% url 'course_view' %}">Courses</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'studentapp:course_view' %}">Courses</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{course.name}}</li>
         </ol>
       </nav>
@@ -47,7 +47,7 @@
               blanditiis repellendus ipsa similique ullam, natus error dolor harum.
                 </p>
                 <div class="mb-3">
-                    <a href="{%url 'student_register' %}" class="btn btn-outline-info">Apply Here</a>
+                    <a href="{%url 'studentapp:student_register' %}" class="btn btn-outline-info">Apply Here</a>
                 </div>
             </div>
 

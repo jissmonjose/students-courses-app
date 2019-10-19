@@ -30,7 +30,9 @@ def student_register(request, template_name='studentapp/apply.html'):
         name = form.cleaned_data.get('name')
         course = form.cleaned_data.get('select_course')
         messages.success(request, f'{name} successfully applied for the course {course}')
-        return redirect('student_register')
+        return redirect('studentapp:student_register')
+    else:
+        form = StudentForm()
     return render(request, template_name, {'form': form})
 
 
