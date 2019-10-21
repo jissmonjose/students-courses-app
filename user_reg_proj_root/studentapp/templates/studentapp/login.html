@@ -1,0 +1,35 @@
+{% extends 'studentapp/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<section id="login">
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-md-4 mx-auto">
+                <div class="card">
+                <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <h2 class="text-secondary border-bottom">Login</h2>
+                        {{form|crispy}}
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info btn-block">Login</button>
+                    </div>
+                </form>
+                <div class="pt-2">
+                    <small class="text-muted">Not have an Account?
+                        <a href="{% url 'studentapp:student_register' %}" class="ml-2">
+                            Sign Up
+                        </a>
+                    </small>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
