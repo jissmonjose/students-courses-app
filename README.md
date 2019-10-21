@@ -7,7 +7,7 @@ This course registration project allows the students to register for a IT relate
 In this Django App, students can view various courses available, can also search through list of courses. Thus eases the course search process. Students can also view the trainer of the programe.
 There is modules for Admin who has the proision to add students, courses, batches, trainers. Also he/she can allot schedule for each batches. Admin able to manipulate these datas if needed.
 
-![Django Course Registration](../../images/screenshot1.png)
+![Django Course Registration](https://github.com/jissmonjose/students-courses-app/blob/master/screenshots/screenshot1.png)
 
 
 
