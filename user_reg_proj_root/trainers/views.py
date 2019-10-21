@@ -3,23 +3,29 @@ from django.forms import ModelForm
 from .models import TrainerModel
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView, UpdateView
+from PIL import Image
+from django.contrib import messages
 
 
 # create a model form
 class TrainerForm(ModelForm):
     class Meta:
         model = TrainerModel
-        fields = '__all__'
+        fields = ['name', 'email', 'phone', 'experience', 'photo']
 
 
 # Create your views here.
 
 # create trainer
 def trainer_create(request):
-    form = TrainerForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('trainer_view')
+    if request.method == 'POST':
+        form = TrainerForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'asdahdsasl')
+            return redirect('trainer_view')
+    else:
+        form = TrainerForm()
     return render(request, 'trainers/index.html', {'form': form})
 
 
@@ -49,4 +55,3 @@ class TrainerDelete(DeleteView):
 class TrainerEdit(UpdateView):
     model = TrainerModel
     fields = ('name', 'email', 'phone', 'experience')
-    success_url = reverse_lazy('trainer_view')
