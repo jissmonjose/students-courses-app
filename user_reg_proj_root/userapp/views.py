@@ -6,6 +6,7 @@ from django.forms import ModelForm
 from .models import Contact
 from studentapp.models import Student
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -66,7 +67,7 @@ def contact(request, template_name='userapp/contact.html'):
 
 # view students
 def view_students(request, template_name='userapp/students.html'):
-    students_data = Student.objects.all().order_by('name')
+    students_data = Student.objects.order_by('name')
 
     # students_search filter
     query = request.GET.get("q")
@@ -77,8 +78,13 @@ def view_students(request, template_name='userapp/students.html'):
             Q(select_batch__batch_number__icontains=query)
         ).distinct()
 
+    paginator = Paginator(students_data, 8)
+    page = request.GET.get('page')
+    students_page = paginator.get_page(page)
+
     context = {
-        'students_data': students_data
+
+        'students_data': students_page
     }
     return render(request, template_name, context)
 
