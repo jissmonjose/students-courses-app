@@ -18,9 +18,10 @@
 
         <!-- messages -->
     {% if messages %}
-    <div class="row">
+    <div class="container">
+    <div class="row py-5">
 
-        <div class="col-md-8">
+        <div class="col-md-6">
             {% for msg in messages %}
             <!-- here v create an alert and grab the message tag for success -->
             <div class="alert alert-{{msg.tags}}">
@@ -32,6 +33,7 @@
         </div>
         {% endif %}
 
+    </div>
     </div>
 
     <div class="box-1" style="min-height: 100vh">

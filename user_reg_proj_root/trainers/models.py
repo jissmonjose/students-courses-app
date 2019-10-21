@@ -23,5 +23,5 @@ class TrainerModel(models.Model):
             img.thumbnail(size)
             img.save(self.photo.path)
 
-    def get_absolute_url(self, **kwargs):
+    def get_absolute_url(self):
         return reverse('trainer_one', kwargs={'pk': self.pk})
