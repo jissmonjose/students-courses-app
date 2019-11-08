@@ -106,7 +106,7 @@ so this v let our form to create fields from our model,
 and these new fields will replace the fields already in our form.
 and fields will be created in the order we specify.
 
-
+simpply put, to manipulate our existing fields in the form
 
 
 

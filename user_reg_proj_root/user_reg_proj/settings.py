@@ -129,8 +129,8 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # login redirect
-LOGIN_URL = 'hrapp:login'
 LOGIN_REDIRECT_URL = 'hrapp:home'
+LOGIN_URL = 'hrapp:login'
 
 # media folder
 MEDIA_URL = '/media/'

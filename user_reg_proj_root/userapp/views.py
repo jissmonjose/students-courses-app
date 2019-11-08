@@ -7,6 +7,7 @@ from .models import Contact
 from studentapp.models import Student
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -35,6 +36,7 @@ def register(request):
 
 
 # home view
+@login_required
 def home(request):
     return render(request, 'userapp/home.html')
 
@@ -66,6 +68,7 @@ def contact(request, template_name='userapp/contact.html'):
 
 
 # view students
+@login_required
 def view_students(request, template_name='userapp/students.html'):
     students_data = Student.objects.order_by('name')
 
